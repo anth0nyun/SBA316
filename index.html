@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <script defer src="./scripts/script.js"></script>
-    
-    
-    <title>Document</title>
+    <title>Guess The Number</title>
 </head>
 <body>
-    
+    <h1>Guess The Number</h1>
+    <p id="promptText">I'm thinking of a number from 1-100.</p>
+    <label for="diff">Difficulty: </label>
+    <select id="diff">
+        <option value="50">1-50 (easy)</option>
+        <option value="100" selected>1-100 (medium)</option>
+        <option value="500">1-500 (hard)</option>
+    </select>
+    <button id="new">New Game</button>
+
+    <form id="form" novalidate>
+        <label for="guess">Your Guess:</label>
+        <input id="guess" name="guess" type="number" required min="1" max="100"/>
+        <button type="submit">Guess</button>
+    </form>
 </body>
 </html>
