@@ -38,6 +38,28 @@ newBtn.addEventListener('click', newGame);
 form.addEventListener('submit', onGuess);
 input.addEventListener('input', validate);
 
+function startGame() {
+    if (started) {
+        alert('Game already started. Use New Game to restart.');
+        return;
+    }
+    makeSecret();
+    started = true;
+    start.disabled = true;
+    gameBox.classList.add('started');
+    alert(`Game started!\nI'm thinking of a number from 1 to ${max}.`);
+    input.focus();
+}
+
+function newGame() {
+    if (!confirm('Start a new game?')) return;       
+    makeSecret();
+    started = true;
+    start.disabled = true;                           
+    alert(`New game started!\nRange: 1 to ${max}.`); 
+    input.focus();
+}
+
 
 // returns random integer from 1 to 100 (which is max)
 function makeSecret() {
