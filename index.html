@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,27 @@
     <script defer src="./scripts/script.js"></script>
     <title>Guess The Number</title>
 </head>
-<body>
-    <main class="Game">
-    <h1>Guess The Number</h1>
-    <p id="promptText">I'm thinking of a number from 1-100.</p>
-    <label for="diff">Difficulty: </label>
-    <select id="diff">
-        <option value="50">1-50 (easy)</option>
-        <option value="100" selected>1-100 (medium)</option>
-        <option value="500">1-500 (hard)</option>
-    </select>
-    <button id="new">New Game</button>
 
-    <form id="form" novalidate>
-        <label for="guess">Your Guess:</label>
-        <input id="guess" name="guess" type="number" required min="1" max="100"/>
-        <button type="submit">Guess</button>
-    </form>
+<body>
+    <main class="page">
+        <section class="game-card" id="game">
+            <h1 id="title">I'm Thinking Of A Number 1-100</h1>
+
+            <div class="controls" id="startRow">
+                <button id="startBtn" type="button">Start</button>
+                <button id="newGameBtn" type="button" class="secondary">New Game</button>
+            </div>
+
+            <form id="guessForm" novalidate>
+                <div class="controls" id="guessRow">
+                    <label for="guess">Your Guess</label>
+                    <input id="guess" name="guess" type="number" placeholder="Enter a number 1-100" required min="1"
+                        max="100" step="1" inputmode="numeric" autocomplete="off" />
+                    <button id="guessBtn" type="submit">Guess</button>
+                </div>
+            </form>
+        </section>
     </main>
 </body>
+
 </html>
