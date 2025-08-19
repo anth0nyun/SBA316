@@ -105,8 +105,28 @@ function onGuess(e) {
     input.focus();
 }
 
-///////////////////////current\\\\\\\\\\\\\\\\\\\\\\
+function validate() {
+    const raw = input.value.trim();
+    const n = Number(raw);
+    let msg = '';
 
+    if (!raw) msg = 'Please enter a number.';
+    else if (!Number.isInteger(n)) msg = 'Whole numbers only.';
+    else if (n < 1 || n > max) msg = `Enter a number between 1 and ${max}.`;
+
+    input.setCustomValidity(msg);
+    input.classList.toggle('invalid', !!msg);
+    guessBtn.disabled = !!msg;
+}
+
+
+function addHistory(n) {
+    const li = document.createElement('li');
+    li.textContent = `Guess ${attempts}: ${n}`;
+    const frag = document.createDocumentFragment();
+    frag.appendChild(li);
+    list.prepend(frag);
+}
 
 
 
