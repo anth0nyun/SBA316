@@ -86,7 +86,7 @@ function onGuess(e) {
 
     validate();
     if (!form.checkValidity()) {
-        alert(input.validationMessage || `Please enter a whole number 1–${max}.`);
+        alert(input.validationMessage || `Please enter a whole number 1-${max}.`);
         return;
     }
 
